@@ -13,8 +13,7 @@ int main() {
 
     for (int i = 0; i < codes.size(); ++i) {
         string codeA = codes[i];
-        for (int j = 0; j < codes.size(); ++j) {
-            if (i == j) continue;
+        for (int j = i+1; j < codes.size(); ++j) {
             string codeB = codes[j];
             if (codeA.size() != codeB.size()) continue;
 
@@ -32,7 +31,6 @@ int main() {
 
             if (diffIndex >= 0) {
                 cout << codeA.erase(diffIndex, 1) << endl;
-                return 0;
             } 
         }
     }
